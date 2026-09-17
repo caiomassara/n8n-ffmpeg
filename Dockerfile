@@ -8,4 +8,5 @@ FROM n8nio/n8n:2.10.4
 USER root
 COPY --from=ffmpeg-fetch /tmp/ffmpeg-extract/ffmpeg /usr/local/bin/ffmpeg
 COPY --from=ffmpeg-fetch /tmp/ffmpeg-extract/ffprobe /usr/local/bin/ffprobe
+RUN mkdir -p /data && chown -R node:node /data
 USER node
