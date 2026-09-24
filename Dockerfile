@@ -4,7 +4,7 @@ RUN curl -L https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-stati
     mkdir /tmp/ffmpeg-extract && \
     tar -xf /tmp/ffmpeg.tar.xz -C /tmp/ffmpeg-extract --strip-components=1
 
-FROM n8nio/n8n:2.10.4
+FROM n8nio/n8n:2.39.6
 USER root
 COPY --from=ffmpeg-fetch /tmp/ffmpeg-extract/ffmpeg /usr/local/bin/ffmpeg
 COPY --from=ffmpeg-fetch /tmp/ffmpeg-extract/ffprobe /usr/local/bin/ffprobe
